@@ -119,7 +119,7 @@ Condiciones: Chrome/Edge DevTools, viewport 390 × 844, red Fast 3G, CPU 4× slo
 
 | Métrica | RWD (móvil) | AWD (móvil) | Delta |
 |---|---|---|---|
-| HTML transferido | 19.3 kB | 12.6 kB | -34.7% |
+| HTML transferido | 19.4 kB | 12.6 kB | -35.1% |
 | Peso total transferido | 607 kB | 79.3 kB | -86.9% |
 | Peticiones HTTP | 27 | 13 | -51.9% |
 | Largest Contentful Paint (LCP) | 5.04 s | 1.33 s | -73.6% |
