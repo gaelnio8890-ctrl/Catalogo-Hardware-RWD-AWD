@@ -1,0 +1,417 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f4f8fc;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* MENU SUPERIOR */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  background: #14213D;
+  color: #FCA311;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.50rem;
+
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  border-radius: 4px;
+  color: #FCA311;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: #14213D;
+}
+
+/* CONTENIDO Y PANEL LATERAL */
+.contenido {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+}
+
+.panel-controles {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  flex: 0 0 200px;
+  min-height: calc(100vh - 52px);
+  padding: 1rem 0;
+  background: #14213D;
+  color: #ffffff;
+}
+
+.panel-controles > summary {
+  display: none;
+}
+
+.controles-interiores {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CUADRO PRINCIPAL */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0 1.5rem;
+  flex: 1;
+  min-width: 0;
+  align-content: start;
+}
+
+/* ESTILOS DE LA TARJETA DE PRODUCTOS */
+.grid-item {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item[hidden] {
+  display: none;
+}
+
+.grid-item picture {
+  display: block;
+  min-width: 0;
+}
+
+.producto-img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  padding: 0.5rem;
+  object-fit: contain;
+}
+
+.producto-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.producto-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #14213D;
+}
+
+.specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 0.75rem;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.producto-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.precio {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #14213D;
+}
+
+.btn-comprar {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.btn-comprar:hover {
+  background: #0056b3;
+}
+
+.btn-comprar.seleccionado {
+  background: #dc3545;
+}
+
+.btn-comprar.seleccionado:hover {
+  background: #b02a37;
+}
+
+.btn-comparar {
+  border: 1px solid #14213D;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  background: #ffffff;
+  color: #14213D;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-comparar:hover,
+.btn-comparar[aria-pressed="true"] {
+  background: #14213D;
+  color: #FCA311;
+}
+
+.btn-comparar:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* FILTROS AVANZADO */
+.filtros {
+  padding: 0 1rem 1rem;
+  min-width: 0;
+  color: #ffffff;
+}
+
+.filtros h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.filtros label {
+  display: block;
+  margin: 0.5rem 0 0.15rem;
+  font-size: 0.75rem;
+  color: #c5d3e2;
+}
+
+.filtros input[type="text"],
+.filtros select {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #336699;
+  border-radius: 4px;
+  background: #f4f8fc;
+  color: #14213D;
+}
+
+.filtros input[type="range"] {
+  width: 100%;
+}
+
+.btn-limpiar {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.35rem;
+  border: 1px solid #336699;
+  border-radius: 4px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-limpiar:hover {
+  background: #0080ff;
+}
+
+
+/* GRAFICA DE COMPARACION */
+.grafica {
+  margin-top: 0.75rem;
+  padding: 1rem 1rem 0;
+  border-top: 1px solid #14213D;
+  min-width: 0;
+  color: #ffffff;
+}
+
+.grafica h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.vacio {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #c5d3e2;
+}
+
+.grupo {
+  margin-bottom: 0.65rem;
+}
+
+.grupo h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  color: #c5d3e2;
+}
+
+.fila {
+  margin-bottom: 0.3rem;
+  font-size: 0.7rem;
+}
+
+.fila .nombre {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.1rem;
+}
+
+.pista {
+  height: 7px;
+  background: #003366;
+  border-radius: 4px;
+}
+
+.barra {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.barra.precio-b { background: #007bff; }
+.barra.ram-b    { background: #2ea36b; }
+.barra.sto-b    { background: #e08a1e; }
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .logo h1 {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contenido {
+    flex-direction: column;
+  }
+
+  .panel-controles {
+    width: 100%;
+    min-height: 0;
+    flex-basis: auto;
+    padding: 0.85rem;
+  }
+
+  .panel-controles > summary {
+    display: list-item;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .controles-interiores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .filtros {
+    padding: 0;
+  }
+
+  .grafica {
+    margin-top: 0;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 639px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu a {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .controles-interiores {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-controles > summary {
+    margin-bottom: 0;
+  }
+
+  .panel-controles[open] > summary {
+    margin-bottom: 0.75rem;
+  }
+
+  .filtros h2,
+  .grafica h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .filtros label {
+    margin-top: 0.5rem;
+  }
+
+  .grafica {
+    padding-top: 1.25rem;
+    border-top: 1px solid #003366;
+  }
+
+  .grid {
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+}

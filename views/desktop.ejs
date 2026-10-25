@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo de Hardware</title>
+  <link rel="icon" href="data:,"> <!-- favicon vacío para evitar errores de carga -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>Catálogo de Hardware</h1> 
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="contenido">
+    <details class="panel-controles" id="panel-controles" aria-label="Filtros y comparación" open>
+      <summary>Filtros y comparación</summary>
+      <div class="controles-interiores">
+        <section class="filtros" aria-label="Filtros">
+          <h2>Filtros</h2>
+
+          <label for="q">Buscar</label>
+          <input type="text" id="q" placeholder="Nombre del producto">
+
+          <label for="precio">Precio máximo: <b id="pv">$50,000</b></label>
+          <input type="range" id="precio" min="5000" max="50000" step="500" value="50000">
+
+          <label for="ram">RAM mínima</label>
+          <select id="ram">
+            <option value="0">Cualquiera</option>
+            <option value="8">8 GB</option>
+            <option value="16">16 GB</option>
+            <option value="32">32 GB</option>
+          </select>
+
+          <label for="sto">Almacenamiento mínimo</label>
+          <select id="sto">
+            <option value="0">Cualquiera</option>
+            <option value="128">128 GB</option>
+            <option value="256">256 GB</option>
+            <option value="512">512 GB</option>
+          </select>
+
+          <button type="button" id="reset" class="btn-limpiar">Limpiar filtros</button>
+        </section>
+
+        <section class="grafica" aria-label="Comparación">
+          <h2>Comparación</h2>
+          <button type="button" id="limpiar-comparacion" class="btn-limpiar-comparacion" hidden>
+            Limpiar comparación
+          </button>
+          <div id="grafica">
+            <p class="vacio">Marca "Comparar" en 2 o 3 productos.</p>
+          </div>
+          <canvas id="chart" width="400" height="200"></canvas>
+        </section>
+      </div>
+    </details>
+
+    <main class="grid" aria-label="Catálogo de productos">
+      
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.20615831d9a3ca8d65ac850024dc77b3%3Frik%3DMAzpYiWxZXIdCQ%26pid%3DImgRaw%26r%3D0&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.20615831d9a3ca8d65ac850024dc77b3%3Frik%3DMAzpYiWxZXIdCQ%26pid%3DImgRaw%26r%3D0&w=720&output=webp" type="image/webp">
+          <img src="https://th.bing.com/th/id/R.20615831d9a3ca8d65ac850024dc77b3?rik=MAzpYiWxZXIdCQ&pid=ImgRaw&r=0" alt="Laptop MSI" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Laptop MSI</h3>
+          <ul class="specs">
+            <li><strong>CPU:</strong> Intel i7 core</li>
+            <li><strong>RAM:</strong> 16GB DDR5</li>
+            <li><strong>Almacenamiento:</strong> 512GB SSD</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$21,199.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+     
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.Q-5godVx-K4xLO43TcDE7AHaHa%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.Q-5godVx-K4xLO43TcDE7AHaHa%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=720&output=webp" type="image/webp">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.Q-5godVx-K4xLO43TcDE7AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Celular Galaxy A57 5G" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Celular Galaxy A57 5G</h3>
+          <ul class="specs">
+            <li><strong>CPU:</strong> Octa-Core</li>
+            <li><strong>RAM:</strong> 16GB</li>
+            <li><strong>Almacenamiento:</strong> 256GB</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$17,588.23</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+   
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61xh50A7iVL._AC_SL1200_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61xh50A7iVL._AC_SL1200_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/61xh50A7iVL._AC_SL1200_.jpg" alt="Tablet ZB10" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Tablet ZB10</h3>
+          <ul class="specs">
+            <li><strong>CPU:</strong> CPU de cuatro núcleos (Quad-core) genérico</li>
+            <li><strong>RAM:</strong> 16GB </li>
+            <li><strong>Almacenamiento:</strong> 32 GB</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$10,588.23</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.vF8qmf25NJ9P4apkzfBRJQAAAA%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.vF8qmf25NJ9P4apkzfBRJQAAAA%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=720&output=webp" type="image/webp">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.vF8qmf25NJ9P4apkzfBRJQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Samsung Galaxy Z Flip8" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Celular Samsung Galaxy Z Flip8</h3>
+          <ul class="specs">
+            <li><strong>CPU:</strong> Snapdragon 8 Gen 3</li>
+            <li><strong>RAM:</strong> 12GB</li>
+            <li><strong>Almacenamiento:</strong> 512 GB</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$19,599.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+      
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61uakkLoHxL._AC_SX522_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61uakkLoHxL._AC_SX522_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/61uakkLoHxL._AC_SX522_.jpg" alt="Samsung Galaxy S24 FE 128GB Ram 8GB Grafito Desbloqueado" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Celular Samsung Galaxy S24 FE 128GB Ram 8GB Grafito Desbloqueado (Reacondicionado)</h3>
+          <ul class="specs">
+            <li><strong>Marca:</strong> Samsung</li>
+            <li><strong>Sistema operativo:</strong> Android</li>
+            <li><strong>Capacidad:</strong> 128 GB</li>
+            <li><strong>Memoria RAM:</strong> 8 GB</li>
+            <li><strong>Procesador:</strong> Exynos 2400</li>
+            <li><strong>Pantalla:</strong> 6.7 pulgadas (120 Hz)</li> 
+            <li><strong>Color:</strong> Grafito</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$6,296.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+      
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71H4T7P7fkL._AC_SX522_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71H4T7P7fkL._AC_SX522_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/71H4T7P7fkL._AC_SX522_.jpg" alt="Teléfono BOPARTE NOTE 15P color naranja" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Celular BOPARTE NOTE 15P</h3>
+          <ul class="specs">
+            <li><strong>Pantalla:</strong> 6.52 pulgadas</li>
+            <li><strong>Sistema:</strong> Android 16</li>
+            <li><strong>RAM:</strong> 3 GB</li>
+            <li><strong>Almacenamiento:</strong> 32 GB</li>
+            <li><strong>Cámaras:</strong> 16 MP + 5 MP</li>
+            <li><strong>Batería:</strong> 3,500 mAh</li>
+            <li><strong>Red:</strong> 4G, Dual SIM</li>
+            <li><strong>Color:</strong> Naranja</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$1,599.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+      
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F613iOBAimbL._AC_SX522_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F613iOBAimbL._AC_SX522_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/613iOBAimbL._AC_SX522_.jpg" alt="Laptop gamer Lenovo LOQ con tarjeta gráfica NVIDIA GeForce RTX 5050" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Laptop Lenovo LOQ 15IRX10</h3>
+          <ul class="specs">
+            <li><strong>Pantalla:</strong> 15.6 pulgadas FHD</li>
+            <li><strong>CPU:</strong> Intel Core i5</li>
+            <li><strong>RAM:</strong> 32 GB</li>
+            <li><strong>Almacenamiento:</strong> 512 GB SSD</li>
+            <li><strong>Gráficos:</strong> NVIDIA GeForce RTX 5050 8 GB</li>
+            <li><strong>Sistema:</strong> Windows 11 Home</li>
+            <li><strong>Color:</strong> Gris Luna</li>
+            <li><strong>Características:</strong> Teclado retroiluminado, Nahimic Audio y pantalla 100% sRGB</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$29,699.34</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+     
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71mb0XuZqCL._AC_SL1500_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71mb0XuZqCL._AC_SL1500_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/71mb0XuZqCL._AC_SL1500_.jpg" alt="Samsung Smart TV Mini LED de 43 pulgadas" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Televisión Samsung Smart TV Mini LED 43</h3>
+          <ul class="specs">
+            <li><strong>Modelo:</strong> UN43M75HAFXZX</li>
+            <li><strong>Pantalla:</strong> 43 pulgadas, Mini LED plana</li>
+            <li><strong>Resolución:</strong> 4K</li>
+            <li><strong>Frecuencia:</strong> 60 Hz</li>
+            <li><strong>Conectividad:</strong> Bluetooth, Ethernet, HDMI y USB</li>
+            <li><strong>Incluye:</strong> Cable de alimentación, control remoto, manual y soporte</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$6,299.10</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+  
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71BK-hQlX6L._AC_SL1500_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71BK-hQlX6L._AC_SL1500_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/71BK-hQlX6L._AC_SL1500_.jpg" alt="Laptop ACEMAGIC AX18-PRO" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Laptop Acemagic AX18-PRO</h3>
+          <ul class="specs">
+            <li><strong>Pantalla:</strong> 18.5 pulgadas FHD</li>
+            <li><strong>CPU:</strong> AMD Ryzen 5 7430U</li>
+            <li><strong>Gráficos:</strong> AMD Radeon Vega 7 integrada</li>
+            <li><strong>RAM:</strong> 16 GB</li>
+            <li><strong>Almacenamiento:</strong> 512 GB SSD</li>
+            <li><strong>Sistema:</strong> Windows 11 Pro</li>
+            <li><strong>Conectividad:</strong> Wi-Fi 6, Bluetooth 5.2 y USB-C</li>
+            <li><strong>Características:</strong> Bisagra de 180° e interruptor físico de cámara</li>
+            <li><strong>Color:</strong> Gris</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$10,449.98</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61Mybk3H-0L._AC_SL1000_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61Mybk3H-0L._AC_SL1000_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/61Mybk3H-0L._AC_SL1000_.jpg" alt="Tableta XP-Pen Magic Drawing Pad" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Tableta XP-Pen Magic Drawing Pad</h3>
+          <ul class="specs">
+            <li><strong>Pantalla:</strong> 12 pulgadas</li>
+            <li><strong>Sistema:</strong> Android 14</li>
+            <li><strong>RAM:</strong> 8 GB</li>
+            <li><strong>Almacenamiento:</strong> 256 GB</li>
+            <li><strong>Lápiz:</strong> X3 Pro</li>
+            <li><strong>Presión:</strong> 16,384 niveles</li>
+            <li><strong>Conectividad:</strong> USB</li>
+            <li><strong>Característica:</strong> Pantalla X-Paper</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$8,798.99</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F51f4fIRowRL._AC_SX522_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F51f4fIRowRL._AC_SX522_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/51f4fIRowRL._AC_SX522_.jpg" alt="XPPen Smart Keyboard ACK08-B Teclado para Magic Drawing Pad" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>XPPen Smart Keyboard ACK08-B Teclado para Magic Drawing Pad</h3>
+          <ul class="specs">
+            <li><strong>Marca:</strong> XP-Pen</li>
+            <li><strong>Dispositivos compatibles:</strong> Tableta gráfica (Magic Drawing Pad)</li>
+            <li><strong>Tecnología de conectividad:</strong> Bluetooth</li>
+            <li><strong>Descripción del teclado:</strong> Gaming</li>
+            <li><strong>Características especiales:</strong> Tecla de acceso directo</li>
+            <li><strong>Color:</strong> Negro</li>
+            <li><strong>Material:</strong> Plástico</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$1,999.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-item">
+        <picture>
+          <source media="(max-width: 639px)" srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81rALfMyUWL._AC_SL1500_.jpg&w=360&output=webp" type="image/webp">
+          <source srcset="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81rALfMyUWL._AC_SL1500_.jpg&w=720&output=webp" type="image/webp">
+          <img src="https://m.media-amazon.com/images/I/81rALfMyUWL._AC_SL1500_.jpg" alt="Monitor gamer LG UltraGear 24GS60F-B" class="producto-img">
+        </picture>
+        <div class="producto-info">
+          <h3>Monitor LG UltraGear 24GS60F-B</h3>
+          <ul class="specs">
+            <li><strong>Pantalla:</strong> 24 pulgadas IPS</li>
+            <li><strong>Resolución:</strong> Full HD (1920 × 1080)</li>
+            <li><strong>Frecuencia:</strong> 180 Hz</li>
+            <li><strong>Sincronización:</strong> AMD FreeSync y NVIDIA G-Sync</li>
+            <li><strong>Tiempo de respuesta:</strong> 1 ms</li>
+            <li><strong>HDR:</strong> HDR10</li>
+            <li><strong>Relación de aspecto:</strong> 16:9</li>
+            <li><strong>Acabado:</strong> Mate, color negro</li>
+            <li><strong>Conexiones:</strong> HDMI y DisplayPort</li>
+          </ul>
+          <div class="producto-footer">
+            <span class="precio">$2,499.00</span>
+            <button type="button" class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo de Hardware</title>
+  <link rel="icon" href="data:,">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#f4f8fc;color:#222}
+    header{background:#14213D;color:#FCA311;padding:12px 16px}
+    header h1{margin:0 0 6px;font-size:1.25rem}
+    nav a{color:#FCA311;text-decoration:none;font-size:.9rem;margin-right:14px}
+    .filtros{background:#fff;padding:12px 16px;border-bottom:1px solid #e5e7eb;display:grid;gap:8px}
+    .filtros input[type=text]{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem}
+    .filtros input[type=range]{width:100%}
+    .lista{padding:12px;display:grid;gap:12px}
+    .card{background:#fff;border-radius:8px;padding:10px;display:flex;gap:10px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .card img{width:90px;height:90px;object-fit:contain;flex-shrink:0;background:#f1f5f9;border-radius:6px}
+    .info{flex:1;min-width:0}
+    .info h3{margin:0 0 4px;font-size:.95rem;line-height:1.25;color:#14213D}
+    .specs{margin:0;padding:0;list-style:none;font-size:.78rem;color:#555}
+    .pie{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .precio{font-weight:700;color:#14213D}
+    .btn{background:#007bff;color:#fff;border:0;border-radius:4px;padding:8px 12px;font-size:.85rem}
+    .vacio{text-align:center;color:#64748b;padding:24px}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Hardware</h1>
+    <nav><a href="#">Inicio</a><a href="#">Productos</a><a href="#">Contacto</a></nav>
+  </header>
+
+  <section class="filtros" aria-label="Filtros">
+    <input type="text" id="q" placeholder="Buscar producto" autocomplete="off">
+    <label for="precio">Precio máximo: <b id="pv">$50,000</b></label>
+    <input type="range" id="precio" min="1000" max="50000" step="500" value="50000">
+  </section>
+
+  <main class="lista" aria-label="Catálogo de productos">
+
+    <article class="card" data-nombre="laptop msi" data-precio="21199">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.20615831d9a3ca8d65ac850024dc77b3%3Frik%3DMAzpYiWxZXIdCQ%26pid%3DImgRaw%26r%3D0&w=180&output=webp" alt="Laptop MSI" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Laptop MSI</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> Intel i7 core</li>
+          <li><strong>RAM:</strong> 16GB DDR5</li>
+          <li><strong>Almacenamiento:</strong> 512GB SSD</li>
+        </ul>
+        <div class="pie"><span class="precio">$21,199.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="celular galaxy a57 5g" data-precio="17588.23">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.Q-5godVx-K4xLO43TcDE7AHaHa%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=180&output=webp" alt="Celular Galaxy A57 5G" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Celular Galaxy A57 5G</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> Octa-Core</li>
+          <li><strong>RAM:</strong> 16GB</li>
+          <li><strong>Almacenamiento:</strong> 256GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$17,588.23</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="tablet zb10" data-precio="10588.23">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61xh50A7iVL._AC_SL1200_.jpg&w=180&output=webp" alt="Tablet ZB10" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Tablet ZB10</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> Quad-core genérico</li>
+          <li><strong>RAM:</strong> 16GB</li>
+          <li><strong>Almacenamiento:</strong> 32 GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$10,588.23</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="celular samsung galaxy z flip8" data-precio="19599">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.vF8qmf25NJ9P4apkzfBRJQAAAA%3Fr%3D0%26rs%3D1%26pid%3DImgDetMain%26o%3D7%26rm%3D3&w=180&output=webp" alt="Samsung Galaxy Z Flip8" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Celular Samsung Galaxy Z Flip8</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> Snapdragon 8 Gen 3</li>
+          <li><strong>RAM:</strong> 12GB</li>
+          <li><strong>Almacenamiento:</strong> 512 GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$19,599.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="celular samsung galaxy s24 fe 128gb reacondicionado" data-precio="6296">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61uakkLoHxL._AC_SX522_.jpg&w=180&output=webp" alt="Samsung Galaxy S24 FE" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Celular Samsung Galaxy S24 FE 128GB (Reacondicionado)</h3>
+        <ul class="specs">
+          <li><strong>Procesador:</strong> Exynos 2400</li>
+          <li><strong>RAM:</strong> 8 GB</li>
+          <li><strong>Capacidad:</strong> 128 GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$6,296.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="celular boparte note 15p" data-precio="1599">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71H4T7P7fkL._AC_SX522_.jpg&w=180&output=webp" alt="Teléfono BOPARTE NOTE 15P" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Celular BOPARTE NOTE 15P</h3>
+        <ul class="specs">
+          <li><strong>Pantalla:</strong> 6.52 pulgadas</li>
+          <li><strong>RAM:</strong> 3 GB</li>
+          <li><strong>Almacenamiento:</strong> 32 GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$1,599.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="laptop lenovo loq 15irx10" data-precio="29699.34">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F613iOBAimbL._AC_SX522_.jpg&w=180&output=webp" alt="Laptop Lenovo LOQ" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Laptop Lenovo LOQ 15IRX10</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> Intel Core i5</li>
+          <li><strong>RAM:</strong> 32 GB</li>
+          <li><strong>Almacenamiento:</strong> 512 GB SSD</li>
+        </ul>
+        <div class="pie"><span class="precio">$29,699.34</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="televisión samsung smart tv mini led 43" data-precio="6299.10">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71mb0XuZqCL._AC_SL1500_.jpg&w=180&output=webp" alt="Samsung Smart TV Mini LED 43" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Televisión Samsung Smart TV Mini LED 43</h3>
+        <ul class="specs">
+          <li><strong>Pantalla:</strong> 43 pulgadas, Mini LED</li>
+          <li><strong>Resolución:</strong> 4K</li>
+          <li><strong>Frecuencia:</strong> 60 Hz</li>
+        </ul>
+        <div class="pie"><span class="precio">$6,299.10</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="laptop acemagic ax18-pro" data-precio="10449.98">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71BK-hQlX6L._AC_SL1500_.jpg&w=180&output=webp" alt="Laptop ACEMAGIC AX18-PRO" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Laptop Acemagic AX18-PRO</h3>
+        <ul class="specs">
+          <li><strong>CPU:</strong> AMD Ryzen 5 7430U</li>
+          <li><strong>RAM:</strong> 16 GB</li>
+          <li><strong>Almacenamiento:</strong> 512 GB SSD</li>
+        </ul>
+        <div class="pie"><span class="precio">$10,449.98</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="tableta xp-pen magic drawing pad" data-precio="8798.99">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61Mybk3H-0L._AC_SL1000_.jpg&w=180&output=webp" alt="Tableta XP-Pen Magic Drawing Pad" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Tableta XP-Pen Magic Drawing Pad</h3>
+        <ul class="specs">
+          <li><strong>Pantalla:</strong> 12 pulgadas</li>
+          <li><strong>RAM:</strong> 8 GB</li>
+          <li><strong>Almacenamiento:</strong> 256 GB</li>
+        </ul>
+        <div class="pie"><span class="precio">$8,798.99</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="xppen smart keyboard ack08-b teclado para magic drawing pad" data-precio="1999">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F51f4fIRowRL._AC_SX522_.jpg&w=180&output=webp" alt="XPPen Smart Keyboard ACK08-B" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>XPPen Smart Keyboard ACK08-B</h3>
+        <ul class="specs">
+          <li><strong>Marca:</strong> XP-Pen</li>
+          <li><strong>Conectividad:</strong> Bluetooth</li>
+          <li><strong>Compatible:</strong> Magic Drawing Pad</li>
+        </ul>
+        <div class="pie"><span class="precio">$1,999.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <article class="card" data-nombre="monitor lg ultragear 24gs60f-b" data-precio="2499">
+      <img src="https://images.weserv.nl/?url=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81rALfMyUWL._AC_SL1500_.jpg&w=180&output=webp" alt="Monitor LG UltraGear 24GS60F-B" width="90" height="90" loading="lazy" decoding="async">
+      <div class="info">
+        <h3>Monitor LG UltraGear 24GS60F-B</h3>
+        <ul class="specs">
+          <li><strong>Pantalla:</strong> 24 pulgadas IPS</li>
+          <li><strong>Resolución:</strong> Full HD</li>
+          <li><strong>Frecuencia:</strong> 180 Hz</li>
+        </ul>
+        <div class="pie"><span class="precio">$2,499.00</span><button type="button" class="btn">Comprar</button></div>
+      </div>
+    </article>
+
+    <p class="vacio" id="vacio" hidden>No hay productos con esos filtros.</p>
+  </main>
+
+  <script>
+    (function () {
+      var q = document.getElementById('q');
+      var r = document.getElementById('precio');
+      var pv = document.getElementById('pv');
+      var cards = document.querySelectorAll('.card');
+      var vacio = document.getElementById('vacio');
+
+      function filtrar() {
+        var texto = q.value.trim().toLowerCase();
+        var max = Number(r.value);
+        var visibles = 0;
+        pv.textContent = '$' + max.toLocaleString('es-MX');
+        cards.forEach(function (c) {
+          var ok = c.dataset.nombre.indexOf(texto) !== -1 && Number(c.dataset.precio) <= max;
+          c.hidden = !ok;
+          if (ok) visibles++;
+        });
+        vacio.hidden = visibles > 0;
+      }
+
+      q.addEventListener('input', filtrar);
+      r.addEventListener('input', filtrar);
+    })();
+  </script>
+</body>
+</html>
